@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <style>
+    body
+    {
+      background-color: gainsboro;
+      text-align: center;
+      margin-top: 200px;
+      margin-bottom: 200px;
+      font-family: unset;
+
+    }
+    h1
+    {
+      color: green;
+      font-family:unset;
+    }
+    .button{
+      background-color:green;
+      border-radius: 2px;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+
+    }
+  </style>
+  <body>
+      <h1>College Mangement System</h1><br><br><br>
+      <form method="POST" action="{% url 'main' %}" encytype="multipart/form-data">
+        {% csrf_token %}
+        <label for="group">Group</label>
+
+         <select id="gname" name="gname">
+           
+             <option value="select">Select</option>
+             {% for i in gi %}
+             <option value="{{i.group_name}}">{{i.group_name}}</option>
+              {% endfor %}
+          </select>
+
+  <label for="state">State</label>
+  <select id="lname" name="lname">
+    <option value="select">Select</option>
+             {% for j in li %}
+      <option value="{{j.location_name}}">{{j.location_name}}</option>
+            {% endfor %}
+   </select>
+  
+  </select>
+
+  <label for="sname">Student name</label>
+  <select id="sname" name="sname">
+    <option value="select">Select</option>
+         {% for s in si %}
+      <option value="{{s.student_name}}">{{s.studentname}}</option>
+            {% endfor %}
+   
+  </select><br><br><br>
+  <button class="button">Add Student</button>
+</body>
+</form>
+</html>

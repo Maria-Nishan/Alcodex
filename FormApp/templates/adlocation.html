@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Location</title>
+  <style>
+    body
+    {
+      text-align: center;
+      font-family: sans-serif;
+      color:green ;
+      margin-top: 10px;
+    }
+   
+  </style>
+</head>
+<body>
+  <form method="POST"  action="{% url 'adlocation' %}" encytype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Add Location</h1>
+     
+     <label for="locationid">Location Id:</label>
+    <input type="text" name="locationid" id="locationid"><br><br>
+    <label for="locationname">Location name:</label>
+    <input type="locationname" name="locationname" id="locationname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" value="Export to CSV">
+    
+
+
+  
+    </form>
+</body>
+</html>

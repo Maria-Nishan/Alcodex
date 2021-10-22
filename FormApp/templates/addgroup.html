@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Group</title>
+  <style>
+    body
+    {
+      text-align: center;
+      font-family: sans-serif;
+      color:green ;
+      margin-top: 10px;
+    }
+   
+  </style>
+</head>
+<body>
+  <form method="POST"  action="{% url 'saveadgroup' %}" encytype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Add Group</h1>
+     
+     <label for="groupid">Group Id:</label>
+    <input type="text" name="groupid" id="groupid"><br><br>
+    <label for="groupname">Group name:</label>
+    <input type="groupname" name="groupname" id="groupname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" value="Export to CSV">
+    
+
+
+  
+    </form>
+</body>
+</html>

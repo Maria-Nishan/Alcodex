@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <style>
+    body{
+    background-color: gainsboro;
+    text-align: center;
+    margin-top: 200px;
+ 
+}
+h1
+{
+  color: green;
+
+}
+
+input[type=text],input[type=password]{
+  width: 15%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+}
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-direction: row;
+}
+    
+  </style>
+</head>
+<body>
+   <form action="{% url 'check' %}"method="POST">
+    {% csrf_token %}
+     <h1>Login</h1>
+     <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="password"><br><br>
+    <input type="submit" value="login">
+
+    </form>
+</body>
+</html>
+
