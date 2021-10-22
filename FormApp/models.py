@@ -33,11 +33,7 @@ class Student(models.Model):
        return self.studentname
   
  
-# class Index(models.Model):
-#     group_name=models.CharField(max_length=30,null=True,blank=False)
-#     location_name=models.CharField(max_length=30,null=True,blank=False)
-#     student_name=models.CharField(max_length=30,null=True,blank=False)
-  
+
  
  
  
